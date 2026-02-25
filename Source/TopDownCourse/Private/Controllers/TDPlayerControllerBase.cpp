@@ -23,10 +23,12 @@ void ATDPlayerControllerBase::SetupInputComponent()
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent))
 	{
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this,
-		                                   &ATDPlayerControllerBase::HandleGroundMovementInput);
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this,
-										   &ATDPlayerControllerBase::HandleGroundMovementCompleted);
+		EnhancedInputComponent->BindAction(
+			MoveAction, ETriggerEvent::Triggered, this, &ATDPlayerControllerBase::HandleGroundMovementInput
+		);
+		EnhancedInputComponent->BindAction(
+			MoveAction, ETriggerEvent::Completed, this, &ATDPlayerControllerBase::HandleGroundMovementCompleted
+		);
 	}
 	else
 	{

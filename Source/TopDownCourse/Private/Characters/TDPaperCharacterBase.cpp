@@ -8,4 +8,5 @@
 ATDPaperCharacterBase::ATDPaperCharacterBase()
 {
 	GetCharacterMovement()->MaxWalkSpeed = 300.f;
+	GetCharacterMovement()->MaxStepHeight = 10.f;
 }
