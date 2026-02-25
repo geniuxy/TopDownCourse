@@ -3,3 +3,9 @@
 
 #include "Characters/TDPaperCharacterBase.h"
 
+#include "GameFramework/CharacterMovementComponent.h"
+
+ATDPaperCharacterBase::ATDPaperCharacterBase()
+{
+	GetCharacterMovement()->MaxWalkSpeed = 300.f;
+}

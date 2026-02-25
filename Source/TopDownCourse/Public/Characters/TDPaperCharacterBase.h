@@ -13,5 +13,7 @@ UCLASS()
 class TOPDOWNCOURSE_API ATDPaperCharacterBase : public APaperCharacter
 {
 	GENERATED_BODY()
-	
+
+public:
+	ATDPaperCharacterBase();
 };
