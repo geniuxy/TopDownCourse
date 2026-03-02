@@ -45,14 +45,15 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=FlipBook)
 	UPaperFlipbook* UpIdleFlipBook;
 
-private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;
 
-	FVector2D LastMoveVector;
-	void HandleGroundMovementInput(const FInputActionValue& InputActionValue);
-	void HandleGroundMovementCompleted(const FInputActionValue& InputActionValue);
+	UPROPERTY(BlueprintReadOnly)
+	FVector2D LastMoveVector = FVector2D(0.f, 1.f);
+	
+	virtual void HandleGroundMovementInput(const FInputActionValue& InputActionValue);
+	virtual void HandleGroundMovementCompleted(const FInputActionValue& InputActionValue);
 };

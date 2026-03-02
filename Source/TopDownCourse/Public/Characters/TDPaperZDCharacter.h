@@ -6,6 +6,7 @@
 #include "PaperZDCharacter.h"
 #include "TDPaperZDCharacter.generated.h"
 
+class UBoxComponent;
 class USpringArmComponent;
 class UCameraComponent;
 /**
@@ -27,6 +28,9 @@ private:
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UBoxComponent* HitBox;
 
 public:
 	/** Returns TopDownCameraComponent subobject **/

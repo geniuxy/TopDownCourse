@@ -45,12 +45,6 @@ void ATDPlayerControllerBase::HandleGroundMovementInput(const FInputActionValue&
 	// const FRotator MovementRotation(0.f, GetControlRotation().Yaw, 0.f);
 
 	ATDPaperCharacterBase* PaperCharacterBase = CastChecked<ATDPaperCharacterBase>(GetPawn());
-	if (MoveVector.Y != 0.f)
-	{
-		// MovementRotation.RotateVector() 被用来将标准方向向量（如 FVector::ForwardVector 或 FVector::RightVector）旋转到角色的当前朝向。
-		// const FVector ForwardVector = MovementRotation.RotateVector(FVector::ForwardVector);
-		PaperCharacterBase->AddMovementInput(FVector(0.f, 1.f, 0.f), MoveVector.Y);
-	}
 
 	if (MoveVector.X != 0.f)
 	{
@@ -68,9 +62,8 @@ void ATDPlayerControllerBase::HandleGroundMovementInput(const FInputActionValue&
 	}
 	else if (MoveVector.Y != 0.f)
 	{
-		// const FVector RightVector = MovementRotation.RotateVector(FVector::RightVector);
-		PaperCharacterBase->AddMovementInput(FVector(1.f, 0.f, 0.f), MoveVector.X);
-
+		PaperCharacterBase->AddMovementInput(FVector(0.f, 1.f, 0.f), MoveVector.Y);
+		
 		if (MoveVector.Y > 0.f)
 		{
 			PaperCharacterBase->GetSprite()->SetFlipbook(DownWalkFlipBook);
