@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "PaperZDCharacter.h"
+#include "TDPaperZDCharacterBase.h"
 #include "TDPaperZDCharacter.generated.h"
 
 class UBoxComponent;
@@ -13,7 +13,7 @@ class UCameraComponent;
  * 
  */
 UCLASS()
-class TOPDOWNCOURSE_API ATDPaperZDCharacter : public APaperZDCharacter
+class TOPDOWNCOURSE_API ATDPaperZDCharacter : public ATDPaperZDCharacterBase
 {
 	GENERATED_BODY()
 

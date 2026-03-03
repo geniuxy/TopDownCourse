@@ -22,6 +22,7 @@ ATDPaperZDCharacter::ATDPaperZDCharacter()
 	// Create a camera boom...
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
+	CameraBoom->bUsePawnControlRotation = false; // 当视角需要跟着鼠标走时，才需要为true
 	CameraBoom->SetUsingAbsoluteRotation(true); // 角色旋转时，Camera不会随之旋转
 	CameraBoom->TargetArmLength = 300.f;
 	CameraBoom->SetRelativeRotation(FQuat(FRotator(-90.f, 0.f, -90.f)));
